@@ -19,4 +19,7 @@ module Admin::ProductsHelper
     hash.present? ? hash['0']['img_path'] : ''
   end
 
+  def image_path(image)
+    image['img_path']
+  end
 end

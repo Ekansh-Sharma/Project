@@ -1,0 +1,6 @@
+- @product.tags.each do |tag|
+  %div{style: 'margin-left: 20px;'}
+    = hidden_field_tag('product[tags][]', tag)
+    = label_tag 'name', tag
+    = link_to "Remove", '#', onclick: 'remove(this)'
+

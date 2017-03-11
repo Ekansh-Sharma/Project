@@ -1,0 +1,6 @@
+- @product.categories.each do |category|
+  %div{style: 'margin-left: 20px;'}
+    = hidden_field_tag('product[categories][]', category)
+    = label_tag 'name', category
+    = link_to "Remove", '#', onclick: 'remove(this)'
+
