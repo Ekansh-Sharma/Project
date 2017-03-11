@@ -1,0 +1,4 @@
+- @product.images.each do |key, image|
+  = label_tag 'image', 'Image'
+  = text_field_tag 'image', image_path(image), readonly: true
+  %br
