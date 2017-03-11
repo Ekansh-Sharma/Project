@@ -1,0 +1,30 @@
+%table
+  %thead
+    %tr.blue
+      %th{:width => "14%"} Name
+      %th{:width => "14%"} Description
+      %th{:width => "15%"} Sku_id
+      %th{:width => "18%"} Price
+      %th{:width => "15%"} Picture
+      %th Categories
+      %th Tags
+      %th Admin Approved
+  %tbody
+    - @products.each do |product|
+      %tr
+        %th
+          = link_to product.name, edit_admin_product_path(product)
+        %th
+          = product.description
+        %th
+          = link_to product.sku_id, edit_admin_product_path(product)
+        %th
+          = product.price
+        %th
+          = first_image(product.images)
+        %th
+          = categories(product.categories)
+        %th
+          = tags(product.tags)
+        %th
+          = product.admin_approved
