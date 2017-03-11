@@ -1,0 +1,22 @@
+.control-label {
+  margin-bottom: 25px;
+}
+input,textarea{
+  margin-bottom: 15px;
+}
+a{
+  margin-left: 15px;
+}
+.clear{
+  clear: both;
+}
+.main-col2 { 
+  width:49%; 
+  float:left; 
+  margin:20px 1% 0px 0px
+}
+.main-col1 { 
+  width:50%; 
+  float:left; 
+  margin:20px 0 0px 0px
+}
