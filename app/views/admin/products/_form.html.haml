@@ -29,6 +29,8 @@
         = f.label :price
         = f.number_field :price, :tabindex => "4", step: 0.01
         %br
+        = f.label :admin_approved
+        = f.check_box :admin_approved, {}, 'true', 'false'
       .main-col2
         = render 'images'
         %label
