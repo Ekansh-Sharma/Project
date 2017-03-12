@@ -24,7 +24,8 @@
           = f.text_area :description, :tabindex => "2", :rows => 2, cols: 50, rows: 10
         %br
         = f.label :sku_id
-        = f.text_field :sku_id, :tabindex => "2", readonly: true
+        = f.label :sku_id, @product.sku_id, class: 'label'
+        %br
         %br
         = f.label :price
         = f.number_field :price, :tabindex => "4", step: 0.01
