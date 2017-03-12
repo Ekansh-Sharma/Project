@@ -10,9 +10,11 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(update_product_params)
+      flash[:success] = 'Successfully Created.'
       redirect_to admin_products_path
     else
-      flash[:error] = @product.errors
+      flash[:error] = @product.errors.full_messages.join('. ')
+      render :edit
     end
   end
 
