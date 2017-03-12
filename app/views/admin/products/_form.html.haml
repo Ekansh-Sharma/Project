@@ -2,8 +2,7 @@
   $(function(){
     $('#add_tag').click(product.addTags);
     $('#add_category').click(product.addCategories);
-
-
+    $("#product_form").submit(product.formValidate);
   });
   function remove(that){
     $(that).parent().remove();
@@ -13,7 +12,7 @@
 
 %div
   %div{ style: 'width: 750px;margin-left: 28%;' }
-    = form_for([:admin, @product]) do |f|
+    = form_for([:admin, @product], html: { id: 'product_form'}) do |f|
       .main-col1
         %div
           = f.label :name
