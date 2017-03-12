@@ -4,13 +4,13 @@ module Api
     protect_from_forgery :except => [:create]
 
     def create
-      @product = Product.new(product_params)
+      product = Product.new(product_params)
       respond_to do |format|
 
-        if @product.save
-          format.json { render json: {message: 'Successfully Updated.'}, status: :created }
+        if product.save
+          format.json { render json: {message: 'Successfully Created.'}, status: :created }
         else
-          format.json { render json: { erorrs: @product.errors }, status: :unprocessable_entity }
+          format.json { render json: { erorrs: product.errors }, status: :unprocessable_entity }
         end
       end
     end
