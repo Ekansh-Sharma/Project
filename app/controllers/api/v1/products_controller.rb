@@ -8,7 +8,7 @@ module Api
       respond_to do |format|
 
         if @product.save
-          format.json { render json: {message: 'Successfully Created.'}, status: :created }
+          format.json { render json: {message: 'Successfully Updated.'}, status: :created }
         else
           format.json { render json: { erorrs: @product.errors }, status: :unprocessable_entity }
         end
