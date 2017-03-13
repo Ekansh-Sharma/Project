@@ -48,3 +48,22 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
     end 
   end
 end
+
+RSpec.describe Admin::ProductsController, type: :controller do
+  describe 'GET index' do
+    before(:each) do
+      @product = Product.create(sku_id: 'sku_id')
+    end
+
+    it 'load index page and has a 200 status code' do
+      get :index
+      expect(assigns(:products)).to eq([@product])
+    end
+
+    it "renders the index template" do
+      get :index
+      expect(response).to render_template("index")
+    end
+  end
+end
+
