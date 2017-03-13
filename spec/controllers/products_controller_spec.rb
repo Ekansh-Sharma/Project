@@ -65,5 +65,21 @@ RSpec.describe Admin::ProductsController, type: :controller do
       expect(response).to render_template("index")
     end
   end
+
+  describe 'Edit page' do
+    before(:each) do
+      @product = Product.create(sku_id: 'sku_id')
+    end
+
+    it 'load edit page and has a 200 status code' do
+      get :edit, id: @product.id
+      expect(response.status).to eq(200)
+    end
+
+    it "renders the edit template" do
+      get :edit, id: @product.id
+      expect(response).to render_template("edit")
+    end
+  end
 end
 
